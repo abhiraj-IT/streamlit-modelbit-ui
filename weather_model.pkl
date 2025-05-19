@@ -1,0 +1,7 @@
+Type
+DecisionTreeClassifier
+sklearn.tree._classes
+Package
+scikit-learn==1.6.1
+Description
+DecisionTreeClassifier()
