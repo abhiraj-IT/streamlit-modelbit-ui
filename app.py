@@ -1,7 +1,4 @@
 # app.py 
-from .env import load_.env
-load_.env()
-
 
 import streamlit as st
 import requests
