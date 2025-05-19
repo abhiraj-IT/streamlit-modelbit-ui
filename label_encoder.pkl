@@ -1,0 +1,7 @@
+Type
+LabelEncoder
+sklearn.preprocessing._label
+Package
+scikit-learn==1.6.1
+Description
+LabelEncoder()
