@@ -1,6 +1,6 @@
 # app.py 
-from dotenv import load_dotenv
-load_dotenv()
+from .env import load_.env
+load_.env()
 
 
 import streamlit as st
