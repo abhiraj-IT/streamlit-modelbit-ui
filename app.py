@@ -12,6 +12,7 @@ st.title("🌤️ Predict Rain or No Rain Using Weather Conditions")
 temperature = st.number_input("🌡️ Temperature (°C):", min_value=-30.0, max_value=60.0, step=0.1)
 humidity = st.number_input("💧 Humidity (%):", min_value=0.0, max_value=100.0, step=0.1)
 wind = st.number_input("🌬️ Wind Speed (km/h):", min_value=0.0, max_value=300.0, step=0.1)
+
 if st.button("🔍 Predict"):
     with st.spinner("Contacting the ML model on Modelbit..."):
         api_url = "https://api.modelbit.com/YOUR_USERNAME/weather_api"  # replace with your real Modelbit endpoint
@@ -26,7 +27,8 @@ if st.button("🔍 Predict"):
             "humidity": humidity,
             "wind": wind
         }
- try:
+
+        try:
             response = requests.post(api_url, headers=headers, json=payload)
             if response.status_code == 200:
                 result = response.json()  # If API returns plain string, use response.text instead
@@ -38,7 +40,8 @@ if st.button("🔍 Predict"):
         except Exception as e:
             st.error("⚠️ An error occurred while calling the API.")
             st.write(e)
-         # === Optional Local Prediction Logic ===
+
+# === Optional Local Prediction Logic ===
 
 # If you want to test locally without API (for CLI testing)
 def predict_weather(temperature: float, humidity: float, wind: float) -> str:
